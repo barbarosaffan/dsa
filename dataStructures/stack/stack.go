@@ -1,0 +1,37 @@
+package main
+
+import "fmt"
+
+type Stack struct {
+	items []int
+}
+
+func (stack *Stack) push(item int) {
+	stack.items = append(stack.items, item)
+}
+
+func (stack *Stack) pop() int {
+	if !(len(stack.items) > 0) {
+		return 0
+	}
+
+	poppedItem := stack.items[len(stack.items)-1]
+	stack.items = stack.items[:len(stack.items)-1]
+
+	return poppedItem
+}
+
+func main() {
+	stack := Stack{}
+
+	stack.push(1)
+	stack.push(2)
+	stack.push(3)
+
+	fmt.Println(stack.items)
+
+	stack.pop()
+	stack.pop()
+
+	fmt.Println(stack.items)
+}
