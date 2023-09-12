@@ -11,14 +11,14 @@ func minMaxSum(nums []int32) {
 		}
 	}
 
-	var minSum, maxSum int32
+	var minSum, maxSum int64
 
 	for i := 0; i < len(nums)-1; i++ {
-		minSum += nums[i]
+		minSum += int64(nums[i])
 	}
 
 	for i := 1; i < len(nums); i++ {
-		maxSum += nums[i]
+		maxSum += int64(nums[i])
 	}
 
 	fmt.Println(minSum, maxSum)
