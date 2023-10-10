@@ -4,9 +4,15 @@ import "fmt"
 
 type Stack struct {
 	items []int
+	top   int
 }
 
 func (stack *Stack) push(item int) {
+
+	if len(stack.items) == 0 {
+		stack.top = item
+		stack.items = append(stack.items, item)
+	}
 	stack.items = append(stack.items, item)
 }
 
@@ -21,6 +27,10 @@ func (stack *Stack) pop() int {
 	return poppedItem
 }
 
+func (stack *Stack) peek() {
+	fmt.Println(stack.items, stack.top)
+}
+
 func main() {
 	stack := Stack{}
 
@@ -28,7 +38,7 @@ func main() {
 	stack.push(2)
 	stack.push(3)
 
-	fmt.Println(stack.items)
+	stack.peek()
 
 	stack.pop()
 	stack.pop()
