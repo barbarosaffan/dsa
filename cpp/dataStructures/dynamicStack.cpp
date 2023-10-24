@@ -37,17 +37,16 @@ bool Stack::empty()
 
 int main()
 {
-    // Stack s;
-    // s.push(333);
-    // s.push(61);
-    // s.push(1);
-    // cout << s.top() << endl;
-    // s.pop();
-    // cout << s.top() << endl;
-    // s.pop();
-    // cout << s.top() << endl;
-    // s.pop();
-    // cout << s.empty() << endl;
-    // return 0;
-    cout << "test" << endl;
+    Stack s;
+    s.push(333);
+    s.push(61);
+    s.push(1);
+    cout << s.top() << endl;
+    s.pop();
+    cout << s.top() << endl;
+    s.pop();
+    cout << s.top() << endl;
+    s.pop();
+    cout << s.empty() << endl;
+    return 0;
 };
