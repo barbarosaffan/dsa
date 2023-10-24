@@ -1,8 +1,8 @@
 // implement a stack
 
 public class Stack {
-    private int maxSize;
-    private long[] stackArray;
+    private final int maxSize;
+    private final long[] stackArray;
     private int top;
 
     public Stack(int s) {
@@ -18,7 +18,7 @@ public class Stack {
 
     // take item from top of stack
     public long pop() {
-        return stackArray[top--];
+        return stackArray[top - 1];
     }
 
     // peek at top of stack
@@ -39,7 +39,7 @@ public class Stack {
 
 // run them
 
-class StackApp {
+class StackImplementation {
     public static void main(String[] args) {
         Stack theStack = new Stack(10); // make new stack
         theStack.push(20); // push items onto stack
@@ -52,6 +52,6 @@ class StackApp {
             System.out.print(value); // display it
             System.out.print(" ");
         }
-        System.out.println("");
+        System.out.println();
     }
 }
