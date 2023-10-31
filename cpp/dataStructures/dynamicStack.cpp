@@ -41,9 +41,9 @@ int main()
     s.push(333);
     s.push(61);
     s.push(1);
+    cout << s.top() << "top" << endl;
     cout << s.top() << endl;
     s.pop();
-    cout << s.top() << endl;
     s.pop();
     cout << s.top() << endl;
     s.pop();
