@@ -53,3 +53,6 @@ go.work
 *.out
 *.app
 
+# MacOS
+
+.DS_Store
