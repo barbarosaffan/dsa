@@ -3,7 +3,7 @@ package aoc
 fun main() {
     println("Advent of Code Day 1: Trebuchet")
 
-    val resourceName = "aoc/Day1.txt" // Replace with the actual file name
+    val resourceName = "aoc/Day1.txt"
     val inputStream = Thread.currentThread().contextClassLoader.getResourceAsStream(resourceName)
     val lines = mutableListOf<String>()
 
