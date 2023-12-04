@@ -20,7 +20,7 @@ fun rotateLeft(d: Int, arr: Array<Int>): Array<Int> {
 
 fun main() {
     println("HackerRank DS, Left Rotation Problem")
-    
+
     val d = 2
     val arr: Array<Int> = arrayOf(1, 2, 3, 4, 5)
 
