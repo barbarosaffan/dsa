@@ -16,7 +16,7 @@ fun getInputs(): MutableList<String> {
     return lines
 }
 
-fun partOne() {
+fun day1Part1() {
     println("Advent of Code Day 1, Trebuchet Part 1")
 
     val lines = getInputs()
@@ -48,10 +48,10 @@ fun partOne() {
 
     }
 
-    println("Totali 1: $total")
+    println("Total 1: $total")
 }
 
-fun partTwo() {
+fun day1Part2() {
     println("Advent of Code Day 1, Trebuchet Part 2")
 
     val digitTexts = listOf("zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten")
@@ -88,10 +88,10 @@ fun partTwo() {
                 }
             }
         }
-        if (secondDigit > -1) {
-            total += firstDigit * 10 + secondDigit
+        total += if (secondDigit > -1) {
+            firstDigit * 10 + secondDigit
         } else {
-            total += firstDigit * 10 + firstDigit
+            firstDigit * 10 + firstDigit
         }
     }
 
@@ -101,6 +101,6 @@ fun partTwo() {
 }
 
 fun main() {
-    partOne()
-    partTwo()
+    day1Part1()
+    day1Part2()
 }
