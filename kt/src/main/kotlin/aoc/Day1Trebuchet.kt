@@ -1,25 +1,9 @@
 package aoc
 
-fun getInputs(): MutableList<String> {
-    val resourceName = "aoc/Day1.txt"
-    val inputStream = Thread.currentThread().contextClassLoader.getResourceAsStream(resourceName)
-    val lines = mutableListOf<String>()
-
-    if (inputStream != null) {
-        inputStream.bufferedReader().useLines {
-            lines.addAll(it.toList())
-        }
-    } else {
-        println("File not found in resources.")
-    }
-
-    return lines
-}
-
 fun day1Part1() {
     println("Advent of Code Day 1, Trebuchet Part 1")
 
-    val lines = getInputs()
+    val lines = utils.AocInput(1)
 
     var total = 0
 
@@ -56,7 +40,7 @@ fun day1Part2() {
 
     val digitTexts = listOf("zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten")
 
-    val lines = getInputs()
+    val lines = utils.AocInput(1)
     var total = 0
 
     for (line in lines) {
