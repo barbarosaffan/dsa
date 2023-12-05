@@ -54,58 +54,47 @@ fun partOne() {
 fun partTwo() {
     println("Advent of Code Day 1, Trebuchet Part 2")
 
-    val textNumbers = mapOf(
-        "zero" to 0,
-        "one" to 1,
-        "two" to 2,
-        "three" to 3,
-        "four" to 4,
-        "five" to 5,
-        "six" to 6,
-        "seven" to 7,
-        "eight" to 8,
-        "nine" to 9
-    )
+    val digitTexts = listOf("zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten")
 
     val lines = getInputs()
     var total = 0
 
     for (line in lines) {
-        var digitString = ""
-        var firstNum = -1
-        var secondNum = -1
-
         val chars = line.toCharArray()
-
+        var digitString = ""
+        var firstDigit = -1
+        var secondDigit = -1
         for (char in chars) {
+            digitString += char
+
             if (char.isDigit()) {
-                if (firstNum != -1) {
-                    firstNum = char.toString().toInt()
+                if (firstDigit > -1) {
+                    secondDigit = char.toString().toInt()
                 } else {
-                    secondNum = char.toString().toInt()
+                    firstDigit = char.toString().toInt()
                 }
-
-                digitString = ""
             } else {
-                digitString += char
-
-                if (textNumbers.containsKey(digitString)) {
-                    val number = textNumbers[digitString]!!
-                    if (firstNum == -1) {
-                        firstNum = number
-                    } else if (secondNum == -1) {
-                        secondNum = number
+                for (digitText in digitTexts) {
+                    if (digitString.contains(digitText)) {
+                        val digit = digitTexts.indexOf(digitText)
+                        digitString = ""
+                        if (firstDigit > -1) {
+                            secondDigit = digit
+                        } else {
+                            firstDigit = digit
+                        }
+                        break
                     }
-                    digitString = ""
                 }
             }
         }
-
-        if (secondNum == -1) {
-            total += firstNum * 10 + firstNum
+        if (secondDigit > -1) {
+            total += firstDigit * 10 + secondDigit
+        } else {
+            total += firstDigit * 10 + firstDigit
         }
-        total += firstNum * 10 + secondNum
     }
+
 
     println("Total 2: $total")
 
