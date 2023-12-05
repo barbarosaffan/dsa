@@ -37,8 +37,8 @@ fun checkPossibility(stats: MutableList<MutableMap<String, Int>>, stocks: Map<St
 
     for (stat in stats) {
         val reds = stat.getOrDefault("red", 0)
-        val blues = stat.getOrDefault("blue", 0)
         val greens = stat.getOrDefault("green", 0)
+        val blues = stat.getOrDefault("blue", 0)
 
         if ((reds > stocks["red"]!!) || (blues > stocks["blue"]!!) || (greens > stocks["green"]!!)) {
             possibility = false
@@ -46,6 +46,24 @@ fun checkPossibility(stats: MutableList<MutableMap<String, Int>>, stocks: Map<St
     }
 
     return possibility
+}
+
+fun calculateMinimum(stats: MutableList<MutableMap<String, Int>>): Int {
+    var minimumRed = 1
+    var minimumGreen = 1
+    var minimumBlue = 1
+
+    for (stat in stats) {
+        val reds = stat.getOrDefault("red", 0)
+        val greens = stat.getOrDefault("green", 0)
+        val blues = stat.getOrDefault("blue", 0)
+
+        if (reds > minimumRed) minimumRed = reds
+        if (greens > minimumGreen) minimumGreen = greens
+        if (blues > minimumBlue) minimumBlue = blues
+    }
+
+    return minimumRed * minimumGreen * minimumBlue
 }
 
 fun day2Part1() {
@@ -73,6 +91,23 @@ fun day2Part1() {
 
 }
 
+fun day2Part2() {
+    println("Advent of Code Day 2, Cube Conundrum Part 2")
+
+    val lines = utils.AocInput(2)
+    var total = 0
+
+    for (line in lines) {
+        val stats = getStats(line)
+        val minimumCount = calculateMinimum(stats)
+
+        total += minimumCount
+    }
+
+    println("Total: $total")
+}
+
 fun main() {
     day2Part1()
+    day2Part2()
 }
