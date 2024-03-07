@@ -1,4 +1,4 @@
-package main
+package problems
 
 import "fmt"
 
@@ -15,7 +15,7 @@ func reverseArray(arr []int32) []int32 {
 	return arr
 }
 
-func main() {
+func ReverseArraySolution() {
 	arr := []int32{1, 2, 3, 4, 5}
 
 	fmt.Println(reverseArray(arr))

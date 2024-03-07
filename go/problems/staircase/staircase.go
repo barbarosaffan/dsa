@@ -1,4 +1,4 @@
-package main
+package problems
 
 import "fmt"
 
@@ -17,6 +17,6 @@ func staircase(n int32) {
 	}
 }
 
-func main() {
+func StaircaseSolution() {
 	staircase(10)
 }

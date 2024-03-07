@@ -1,4 +1,4 @@
-package main
+package ds
 
 import "fmt"
 
@@ -31,7 +31,7 @@ func (stack *Stack) peek() {
 	fmt.Println(stack.items, stack.top)
 }
 
-func main() {
+func StackImplementation() {
 	stack := Stack{}
 
 	stack.push(1)

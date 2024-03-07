@@ -1,4 +1,4 @@
-package main
+package algorithms
 
 import "fmt"
 
@@ -14,8 +14,8 @@ func bubbleSort(arr []int) []int {
 	return arr
 }
 
-func main() {
+func BubbleSortImplementation() {
 	arr := []int{61, 34, 99999, 0, 333333333}
 
-	fmt.Println(arr)
+	fmt.Println(bubbleSort(arr))
 }

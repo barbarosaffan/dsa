@@ -1,4 +1,4 @@
-package main
+package problems
 
 import "fmt"
 
@@ -17,7 +17,7 @@ func hourglassSum(arr [][]int32) int32 {
 	return maxSum
 }
 
-func main() {
+func HourglassSumSolution() {
 	arr := [][]int32{
 		{-9, -9, -9, 1, 1, 1},
 		{0, -0, 0, 4, 3, 2},

@@ -1,4 +1,4 @@
-package main
+package problems
 
 import "fmt"
 
@@ -24,7 +24,7 @@ func minMaxSum(nums []int32) {
 	fmt.Println(minSum, maxSum)
 }
 
-func main() {
+func MinMaxSumSolution() {
 	nums := []int32{1, 2, 3, 4, 5}
 
 	minMaxSum(nums)
