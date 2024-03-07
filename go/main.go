@@ -1,7 +1,9 @@
 package main
 
-import ds "dsa/ds/stack"
+import (
+	"dsa/practices"
+)
 
 func main() {
-	ds.StackImplementation()
+	practices.Slices()
 }
