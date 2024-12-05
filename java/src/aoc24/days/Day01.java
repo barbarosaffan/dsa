@@ -32,6 +32,28 @@ public class Day01 {
     }
 
     public int solvePart2(List<String> input) {
-        return 0;
+        List<Integer> leftSide = new ArrayList<>();
+        List<Integer> rightSide = new ArrayList<>();
+        int total = 0;
+
+        for (String s : input) {
+            String[] parts = s.split("\\s+");
+            String leftString = parts[0];
+            String rightString = parts[1];
+            leftSide.add(Integer.parseInt(leftString));
+            rightSide.add(Integer.parseInt(rightString));
+        }
+
+        Collections.sort(leftSide);
+        Collections.sort(rightSide);
+
+        for (int i = 0; i < input.size(); i++) {
+            int leftSideElement = leftSide.get(i);
+            int occurenceInRightSide = Collections.frequency(rightSide, leftSideElement);
+
+            total += occurenceInRightSide * leftSideElement;
+        }
+
+        return total;
     }
 }
