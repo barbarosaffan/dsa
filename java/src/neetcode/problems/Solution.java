@@ -1,8 +1,10 @@
 package neetcode.problems;
 
+import java.util.Arrays;
+
 public class Solution {
     public static void main(String[] args) {
-        ValidAnagram validAnagram = new ValidAnagram();
-        System.out.println(validAnagram.Solve());
+        TwoSums twoSums = new TwoSums();
+        System.out.println(Arrays.toString(twoSums.Solve()));
     }
 }
